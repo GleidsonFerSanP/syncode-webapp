@@ -51,7 +51,17 @@ gulp.task('server', function() {
 
     gulp.watch('src/**/*').on('change', browserSync.reload);
 
-    gulp.watch('src/js/**/*.js').on('change', function(event) {
+    gulp.watch(
+        [
+            'src/js/libs/angular/angular.min.js',
+            'src/js/libs/angular-storage/ngStorage.min.js',
+            'src/js/libs/angular-route/angular-route.min.js',
+            'src/js/libs/angular-locale/angular-locale_pt-br.js',
+            'src/js/libs/angular-route/angular-route.min.js',
+            'src/js/**/**/*.js',
+            'src/js/**/*.js'
+        ]
+    ).on('change', function(event) {
         gulp.src(event.path)
             .pipe(jshint())
             .pipe(jshint.reporter(jshintStylish));

@@ -1,0 +1,35 @@
+<div class="container login">
+    <div class="row ">
+        <div class="col-md-6 col-md-offset-3 ">
+            <div class="panel panel-login">
+                <div class="panel-body ">
+                    <div class="row ">
+                        <div ng-if="tabLogin === 'gerente'" ng-include="'./../views/partials/tab-login-gerente-contas.html'"></div>
+                        <div ng-if="tabLogin === 'cliente'" ng-include="'./../views/partials/tab-login-cliente.html'"></div>
+                    </div>
+                </div>
+                <div class="panel-heading ">
+                    <div class="row ">
+                        <div class="col-xs-6 tabs ">
+                            <a href="javascript:void(0);" ng-click="changeTab('gerente')" ng-class="{'active': tabLogin === 'gerente'}">
+                                <div class="login" ng-class="{'register': tabLogin === 'gerente'}">GERENTE</div>
+                            </a>
+                        </div>
+                        <div class="col-xs-6 tabs ">
+                            <a href="javascript:void(0);" ng-click="changeTab('cliente')" ng-class="{'active': tabLogin === 'cliente'}">
+                                <div class="login" ng-class="{'register': tabLogin === 'cliente'}" class="">CLIENTE</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer>
+    <div class="container ">
+        <div class="col-md-10 col-md-offset-1 text-center ">
+            <h6 style="font-size:14px;font-weight:100;color: #fff; ">Syncode Bank</h6>
+        </div>
+    </div>
+</footer>

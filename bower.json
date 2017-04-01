@@ -1,0 +1,13 @@
+{
+  "name": "app",
+  "private": true,
+  "devDependencies": {},
+  "dependencies": {
+    "angular": "^1.6.4",
+    "angular-route": "^1.6.4",
+    "angular-locale": "^0.1.11",
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.2.1",
+    "ngstorage": "^0.3.11"
+  }
+}
