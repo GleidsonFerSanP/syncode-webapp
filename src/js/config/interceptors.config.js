@@ -1,5 +1,6 @@
 ;
 (function() {
+    'use strict'
 
     angular.module('myApp')
         .config(['$httpProvider', function($httpProvider) {

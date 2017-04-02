@@ -1,9 +1,14 @@
 ;
 (function() {
 
+    'use strict'
+
     angular.module('myApp', [
         'ngRoute',
-        'ngStorage'
+        'ngStorage',
+        'ui.mask',
+        'ngDialog',
+        'ui.utils.masks'
     ]);
 
 })();

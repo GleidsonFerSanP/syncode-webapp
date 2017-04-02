@@ -1,22 +1,29 @@
 ;
 (function() {
 
+    'use strict'
+
     angular.module('myApp')
         .controller('LoginCtrl', loginCtrl);
 
-    function loginCtrl($scope, $log, $localStorage, Login) {
+    function loginCtrl($scope, $log, $localStorage, $location, Login) {
         $log.info('init login');
         $scope.tabLogin = 'cliente';
+        $scope.z = "Agência";
+        $scope.message = {
+            error: '',
+            success: ''
+        }
 
         $scope.loginData = {
             login: "",
             password: ""
         }
 
-        $scope.loginGerente = function(obj) {
+        $scope.loginCliente = function(obj) {
             $log.info(obj);
-
-            Login.loginGerente(obj, function(response) {
+            $localStorage.token = null;
+            Login.loginCliente(obj, function(response) {
 
                 $localStorage.token = response.data.value;
 
@@ -26,6 +33,7 @@
 
             }, function(response) {
                 $log.error(response);
+                $scope.message.error = response.data.message;
             });
 
         }
