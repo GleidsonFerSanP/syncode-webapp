@@ -20,15 +20,16 @@
             password: ""
         }
 
+        $scope.$on('logar', function(event, args) {
+            $scope.message.error = "Por favor realize o login";
+        });
+
         $scope.loginCliente = function(obj) {
             $log.info(obj);
             $localStorage.token = null;
             Login.loginCliente(obj, function(response) {
 
                 $localStorage.token = response.data.value;
-
-                var token = $localStorage.GCMTOKEN;
-
                 $location.path('/app/home');
 
             }, function(response) {

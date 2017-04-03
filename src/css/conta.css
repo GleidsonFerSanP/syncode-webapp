@@ -8,6 +8,66 @@ body {
     overflow-x: hidden;
 }
 
+.well {
+    border: 1px solid;
+}
+
+.nav-stacked>li {
+    border: 1px solid;
+    background-color: #999999;
+    font-weight: bold;
+}
+
+.nav-stacked>li>a {
+    color: #000
+}
+
+.content-history {
+    border: 1px solid;
+}
+
+.content-header {
+    background-color: #999999;
+}
+
+.content-header span {
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.content-header p {
+    color: #fff;
+    font-weight: 400;
+}
+
+.title {
+    font-size: 20px;
+    color: #999999;
+    font-weight: 400;
+}
+
+.menu {
+    float: right;
+    margin-top: 10px;
+    background-color: #999999;
+    margin-right: -15px;
+}
+
+.divider {
+    height: 1px;
+    width: 100%;
+    display: block;
+    /* for use on default inline elements like span */
+    margin: 9px 0;
+    overflow: hidden;
+    background-color: #e5e5e5;
+}
+
+.history {
+    background-color: #fff;
+}
+
 
 /* Toggle Styles */
 
@@ -131,4 +191,30 @@ body {
 
 .menu {
     border: 1px solid;
+}
+
+input.ng-touched.ng-invalid,
+select.ng-touched.ng-invalid {
+    border-color: #f99;
+}
+
+.transacoes {
+    background: #FFF;
+    padding: 10px;
+}
+
+.transacoes {
+    color: #000;
+}
+
+.zebra {
+    background-color: #e5e5e5;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.content-result {
+    float: right;
+    margin-right: -14px;
+    line-height: 12px;
 }

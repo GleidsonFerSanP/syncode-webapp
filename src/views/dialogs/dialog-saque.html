@@ -6,10 +6,20 @@
                     <h3 class="panel-title">Saque</h3>
                 </div>
                 <div class="panel-body">
-                    <form>
+                    <div class="alert alert-success" role="alert" ng-if="message.success" ng-bind="message.success"></div>
+                    <div class="alert alert-danger" role="alert" ng-if="message.error" ng-bind="message.error"></div>
+                    <form name="formSaque" ng-submit="saque(formSaque)" novalidate>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Valor</label>
-                            <input type="text" ng-model="saque.valor" ui-number-mask class="form-control" id="exampleInputEmail1" placeholder="Valor">
+                            <input type="text" name="valor" required min="0.01" max="{{conta.saldo+limite}}" ng-model="transacao.valor" ui-number-mask class="form-control" id="exampleInputEmail1" placeholder="Valor">
+                            <span ng-if="formSaque.valor.$invalid && formSaque.valor.$touched" style="color: red">
+                                <span ng-if="formSaque.valor.$error.required" style="color: red">
+                                    Insira um valor para o saque!
+                                </span>
+                            <span ng-if="formSaque.valor.$error.max" style="color: red">
+                                   Valor acima do seu limite disponível!
+                                </span>
+                            </span>
                         </div>
                         <button type="submit" class="btn btn-default">Confirmar</button>
                     </form>

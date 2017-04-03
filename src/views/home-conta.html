@@ -1,4 +1,29 @@
-<div class="container">
+<nav class="navbar navbar-default navbar-fixed-top  content-header" ng-controller="ClienteCtrl">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <span> Olá,</span> <span ng-bind="cliente.nome"></span>
+                <p>Cliente desde {{conta.dataAbertura | date}}</p>
+
+            </div>
+            <div class="col-md-4">
+            </div>
+            <div class="col-md-2">
+                <div class="dropdown ">
+                    <button class="btn btn-default dropdown-toggle menu" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        <span>Menu</span>
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                        <li><a href="javascript:void(0);" ng-click="clickToOpenCliente();">Dados pessoais</a></li>
+                        <li><a href="javascript:void(0);" ng-click="logout()">Sair</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+<div class="container" ng-controller="ContaCtrl" ng-init="listarTransacoes()">
     <div class="row">
         <div class="col-md-3" id="leftCol">
 
@@ -11,14 +36,30 @@
             </div>
 
         </div>
-        <div class="col-md-9 jumbotron">
-            <h2 id="sec0">Content</h2>
-            At Bootply we like to build simple Bootstrap templates that utilize the code Bootstap CSS without a lot of customization. Sure you can find a lot of Bootstrap themes and inspiration, but these templates tend to be heavy on customization. sequi nesciunt.
-            Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem
-            ullam corporis suscipit laboriosam, nisi ut. Rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
-            cor magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat
-            voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut!
+        <div class="col-md-9 jumbotron content-history">
 
+            <h2 id="sec0">Histórico de transações</h2>
+            <div class="divider"></div>
+            <div class="history">
+                <div class="col-sm-12">
+                    <div class="transacoes" transacoes></div>
+                </div>
+                <div class="divider"></div>
+                <div class="col-sm-8"></div>
+                <div class="col-sm-4">
+                    <div class="content-result">
+                        <p style="float: right">
+                            <span class="title">Saldo: </span>
+                            <span ng-if="conta.saldo <= 0" style="color: red;" ng-bind="conta.saldo | currency"></span>
+                            <span ng-if="conta.saldo > 0" ng-bind="conta.saldo | currency"></span>
+                        </p>
+                        <p style="float: right"> <span class="title">Limite: </span><span ng-bind="limite | currency"></span></p>
+                        <p style="float: right"> <span class="title">Saldo Total: </span><span ng-bind="conta.saldo + limite | currency"></span></p>
+                    </div>
+
+                </div>
+
+            </div>
 
         </div>
     </div>

@@ -4,8 +4,8 @@
 
     angular.module('myApp')
         .config(['$httpProvider', function($httpProvider) {
-            $httpProvider.interceptors.push(['$q', '$location', '$localStorage', '$log',
-                function($q, $location, $localStorage, $log) {
+            $httpProvider.interceptors.push(['$q', '$location', '$localStorage', '$log', '$rootScope',
+                function($q, $location, $localStorage, $log, $rootScope) {
 
                     return {
                         'request': function(config) {
@@ -20,6 +20,7 @@
                             console.log(response);
 
                             if (response.status === 401 || response.status === 403) {
+                                $rootScope.$broadcast('logar', { any: {} });
                                 $location.path('/login');
                             }
 

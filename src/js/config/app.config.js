@@ -4,7 +4,9 @@
     var BASEURL = "http://localhost:8080/api/v1";
     var api = {
         loginCliente: BASEURL + '/login/cliente',
-        contas: BASEURL + '/contas'
+        contas: BASEURL + '/contas',
+        clientes: BASEURL + '/clientes',
+        transacoes: BASEURL + '/transacoes'
     };
 
     angular.module('myApp')
@@ -19,7 +21,7 @@
             })
             .when("/app/home", {
                 templateUrl: '../../views/home-conta.html',
-                controller: "ContaCtrl"
+                controller: "HomeCtrl"
             })
             .otherwise({
                 templateUrl: '../../views/login.html',
