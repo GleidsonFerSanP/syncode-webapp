@@ -4,7 +4,7 @@
     'use strict'
 
     angular.module('myApp')
-        .factory('Cliente', cliente)
+        .factory('Cliente', cliente);
 
     function cliente($http, Api) {
 

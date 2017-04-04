@@ -6,7 +6,7 @@
     angular.module('myApp')
         .controller('LoginCtrl', loginCtrl);
 
-    function loginCtrl($scope, $log, $localStorage, $location, Login) {
+    function loginCtrl($scope, $log, $localStorage, $location, Login, ngDialog) {
         $log.info('init login');
         $scope.tabLogin = 'cliente';
         $scope.z = "Agência";
@@ -18,6 +18,15 @@
         $scope.loginData = {
             login: "",
             password: ""
+        }
+
+        $scope.instrucoes = function() {
+            ngDialog.open({
+                template: './../../views/dialogs/dialog-instrucoes.html',
+                className: 'ngdialog-theme-default',
+                scope: $scope,
+                appendClassName: 'ngdialog-custom'
+            });
         }
 
         $scope.$on('logar', function(event, args) {

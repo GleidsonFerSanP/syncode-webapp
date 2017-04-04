@@ -1,14 +1,14 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,100,700,500);
 body {
     padding-top: 90px;
-    background: #F7F7F7;
+    background: ;
     color: #666666;
     font-family: 'Roboto', sans-serif;
     font-weight: 100;
 }
 
 body {
-    background-color: #FFF;
+    background-color: #CBCBCB;
 }
 
 @-webkit-keyframes HeroBG {
@@ -195,9 +195,7 @@ label {
 }
 
 .btn-login {
-    background-color: #E8E9EC;
     outline: none;
-    color: #2D3B55;
     font-size: 14px;
     height: auto;
     font-weight: normal;
@@ -205,13 +203,15 @@ label {
     text-transform: uppercase;
     border: none;
     border-radius: 0px;
+    background-color: #2D3B55;
     box-shadow: none;
+    color: #fff;
 }
 
 .btn-login:hover,
 .btn-login:focus {
-    color: #fff;
-    background-color: #2D3B55;
+    background-color: #E8E9EC;
+    color: #2D3B55;
 }
 
 .forgot-password {

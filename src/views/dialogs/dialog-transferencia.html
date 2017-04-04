@@ -26,7 +26,7 @@
                                     Insira o número da conta!
                                 </span>
                             </span>
-                            <input type="text" name="digito" ui-mask="9" ui-mask-placeholder required ng-model="transacao.contaDestino.digito" class="form-control" placeholder="Dígito">
+                            <input type="text" name="digito" ui-mask="9" style="margin-top: 20px;width: 77px;" ui-mask-placeholder required ng-model="transacao.contaDestino.digito" class="form-control" placeholder="Dígito">
                             <span ng-if="formSaque.digito.$invalid && formSaque.digito.$touched" style="color: red">
                                 <span ng-if="formSaque.digito.$error.required" style="color: red">
                                     Insira o dígito da conta!

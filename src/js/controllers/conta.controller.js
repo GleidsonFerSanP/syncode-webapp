@@ -56,9 +56,15 @@
         }
 
         function resetTransacao() {
-            $scope.message = {
-                success: null,
-                error: null
+            $scope.transacao = {
+                valor: null,
+                contaDestino: {
+                    agencia: {
+                        numero: null
+                    },
+                    numero: null,
+                    digito: null
+                }
             }
         }
 
